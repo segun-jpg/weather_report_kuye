@@ -1,0 +1,11 @@
+---
+- name: Copy Final Report to QA Server
+  hosts: qa_server
+  gather_facts: no
+
+  tasks:
+    - name: Copy Final.report.CSV to /tmp
+      copy:
+        src: Final.report.CSV
+        dest: /tmp/Final.report.CSV
+        mode: '0644'
